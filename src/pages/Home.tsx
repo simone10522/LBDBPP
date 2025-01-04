@@ -37,7 +37,7 @@ import React, { useEffect, useState } from 'react';
               to="/tournaments/create"
               className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
             >
-              Create Tournament
+              Crea Torneo
             </Link>
           </div>
 
@@ -80,8 +80,8 @@ import React, { useEffect, useState } from 'react';
                 alt="Pokeball Icon"
                 className="h-12 w-12 text-gray-400 mx-auto mb-4"
               />
-              <h3 className="text-lg font-medium text-gray-900">No tournaments yet</h3>
-              <p className="text-gray-500">Get started by creating your first tournament!</p>
+              <h3 className="text-lg font-medium text-gray-900">Nessun Torneo Disponibile</h3>
+              <p className="text-gray-500">Inizia creando un Torneo!</p>
             </div>
           )}
         </div>
