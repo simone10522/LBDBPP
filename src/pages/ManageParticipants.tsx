@@ -1,5 +1,5 @@
 // src/pages/ManageParticipants.tsx
-    import React, { useEffect, useState } from 'react';
+    import React, { useEffect, useState, useCallback } from 'react';
     import { useParams, useNavigate, Link } from 'react-router-dom';
     import { supabase } from '../lib/supabase';
     import { useAuth } from '../hooks/useAuth';
@@ -26,25 +26,9 @@
       const [participantId, setParticipantId] = useState<string | null>(null);
       const [tournamentStatus, setTournamentStatus] = useState<'draft' | 'in_progress' | 'completed'>('draft');
 
-      useEffect(() => {
-        fetchTournamentData();
-        fetchMaxPlayers();
-        checkIfParticipating();
-      }, [user]);
-
-      const fetchTournamentData = async () => {
+      const fetchParticipants = useCallback(async () => {
         setLoading(true);
         try {
-          const { data: tournamentData, error: tournamentError } = await supabase
-            .from('tournaments')
-            .select('status')
-            .eq('id', id)
-            .single();
-          if (tournamentError) {
-            throw new Error(`Errore durante il recupero del torneo: ${tournamentError.message}`);
-          }
-          setTournamentStatus(tournamentData?.status || 'draft');
-
           const { data: participantsData, error } = await supabase
             .from('tournament_participants')
             .select(`
@@ -74,7 +58,13 @@
         } finally {
           setLoading(false);
         }
-      };
+      }, [id]);
+
+      useEffect(() => {
+        fetchParticipants();
+        fetchMaxPlayers();
+        checkIfParticipating();
+      }, [fetchParticipants, user]);
 
       const fetchMaxPlayers = async () => {
         try {

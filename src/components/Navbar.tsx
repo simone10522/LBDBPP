@@ -47,13 +47,17 @@ import React, { useEffect, useState } from 'react';
         <nav className="bg-red-600 shadow-lg">
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center h-16">
-              <Link to="/" className="flex items-center space-x-12">
+              <Link to="/" className="flex items-center space-x-2">
                 <img
                   src="/icons/pokeball.png"
                   alt="Pokeball Icon"
                   className="h-12 w-12 animate-spin-slow"
                 />
-                <span className="text-xl font-bold text-white">LBDB Pokemon Pocket Tournaments</span>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+                  alt="Pokemon Logo"
+                  className="h-10"
+                />
               </Link>
 
               <div className="flex items-center space-x-4">

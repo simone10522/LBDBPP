@@ -74,14 +74,14 @@ import React, { useEffect, useState } from 'react';
           </div>
 
           {tournaments.length === 0 && (
-            <div className="text-center py-12 max-w-4xl mx-auto p-4 bg-gray-50 bg-opacity-50 rounded-lg shadow-md">
+            <div className="text-center py-12">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2048px-Pok%C3%A9_Ball_icon.svg.png"
                 alt="Pokeball Icon"
                 className="h-12 w-12 text-gray-400 mx-auto mb-4"
               />
               <h3 className="text-lg font-medium text-gray-900">Nessun Torneo Disponibile</h3>
-              <p className="text-gray-500">Inizia creando un Torneo!</p>
+              <p className="text-gray-500">Inizia creando il tuo torneo!</p>
             </div>
           )}
         </div>
