@@ -7,33 +7,38 @@ import React, { useEffect, useState } from 'react';
       const { user } = useAuth();
       const navigate = useNavigate();
       const [username, setUsername] = useState('');
+      const [profileImage, setProfileImage] = useState('');
       const [loading, setLoading] = useState(true);
 
       useEffect(() => {
-        const fetchUsername = async () => {
+        const fetchUserData = async () => {
           if (user) {
             try {
               const { data, error } = await supabase
                 .from('profiles')
-                .select('username')
+                .select('username, profile_image')
                 .eq('id', user.id)
                 .single();
               if (error) {
-                console.error("Error fetching username:", error);
-                setUsername('Guest'); // Default if error
+                console.error("Error fetching user data:", error);
+                setUsername('Guest');
+                setProfileImage('');
               } else {
-                setUsername(data?.username || 'Guest'); // Default if username is null
+                setUsername(data?.username || 'Guest');
+                setProfileImage(data?.profile_image || '');
               }
             } catch (error) {
-              console.error("Error fetching username:", error);
-              setUsername('Guest'); // Default if error
+              console.error("Error fetching user data:", error);
+              setUsername('Guest');
+              setProfileImage('');
             }
           } else {
             setUsername('Guest');
+            setProfileImage('');
           }
           setLoading(false);
         };
-        fetchUsername();
+        fetchUserData();
       }, [user]);
 
       const handleLogout = async () => {
@@ -62,7 +67,14 @@ import React, { useEffect, useState } from 'react';
 
               <div className="flex items-center space-x-4">
                 {user ? (
-                  <>
+                  <div className="flex items-center space-x-2">
+                    {profileImage && (
+                      <img
+                        src={profileImage}
+                        alt="Profile"
+                        className="h-8 w-8 rounded-full object-cover"
+                      />
+                    )}
                     <span className="text-white">Ciao! {username}</span>
                     <button
                       onClick={handleLogout}
@@ -70,7 +82,7 @@ import React, { useEffect, useState } from 'react';
                     >
                       Logout
                     </button>
-                  </>
+                  </div>
                 ) : (
                   <>
                     <Link
