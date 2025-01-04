@@ -81,7 +81,7 @@ import React, { useEffect, useState } from 'react';
                 className="h-12 w-12 text-gray-400 mx-auto mb-4"
               />
               <h3 className="text-lg font-medium text-gray-900">Nessun Torneo Disponibile</h3>
-              <p className="text-gray-500">Inizia creando il tuo torneo!</p>
+              <p className="text-gray-700">Inizia creando il tuo torneo!</p>
             </div>
           )}
         </div>
