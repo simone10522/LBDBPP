@@ -59,7 +59,7 @@ import React, { useEffect, useState } from 'react';
                   className="h-12 w-12 animate-spin-slow"
                 />
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+                  src="icons/LBDBPP.png"
                   alt="Pokemon Logo"
                   className="h-10"
                 />
