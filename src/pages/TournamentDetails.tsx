@@ -5,6 +5,7 @@
     import { useAuth } from '../hooks/useAuth';
     import MatchList from '../components/MatchList';
     import ParticipantList from '../components/ParticipantList';
+	import '../index.css';
 
     interface Tournament {
       id: string;
@@ -251,7 +252,14 @@
           </div>
           {tournament.status === 'completed' && winner && (
             <div className="flex flex-col items-center justify-center mt-8">
-              <p className="text-center text-green-600 font-bold text-xl">VINCITORE</p>
+              <p className="text-center text-green-600 font-bold text-3xl text-outline"style={{
+        textShadow: `
+          -2px -2px 0 #105050,
+          2px -2px 0 #105050,
+          -2px 2px 0 #105050,
+          2px 2px 0 #105050
+        `,
+      }}>VINCITORE</p>
               <img src="/icons/crown.png" alt="Winner Crown" className="h-40 w-48" />
               <p className="mt-2 text-4xl font-bold text-gray-900 text-center">{winner.username}</p>
             </div>
