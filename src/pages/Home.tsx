@@ -74,7 +74,7 @@ import React, { useEffect, useState } from 'react';
           </div>
 
           {tournaments.length === 0 && (
-            <div className="text-center py-12">
+            <div className="text-center py-12 max-w-md mx-auto p-4 bg-gray-200 bg-opacity-50 rounded-lg shadow-md"> {/* Added background */}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2048px-Pok%C3%A9_Ball_icon.svg.png"
                 alt="Pokeball Icon"
