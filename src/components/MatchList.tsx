@@ -59,7 +59,7 @@ import React from 'react';
                           <img
                             src={`/icons/profile1.png`}
                             alt={`${match.player1} profile`}
-                            className="h-11 w-11 rounded-full object-cover"
+                            className="h-5 w-5 rounded-full object-cover"
                           />
                         </button>
                         <button
@@ -70,21 +70,25 @@ import React from 'react';
                           <img
                             src={`/icons/profile2.png`}
                             alt={`${match.player2} profile`}
-                            className="h-11 w-11 rounded-full object-cover"
+                            className="h-5 w-5 rounded-full object-cover"
                           />
                         </button>
                       </div>
                     )}
 
-                    {match.status === 'completed' && match.winner_id && (
-                      <img
-                        src={`/icons/profile${match.winner_id === match.player1_id ? '1' : '2'}.png`}
-                        alt="Winner"
-                        className="h-11 w-11 rounded-full object-cover"
-                      />
-                    )}
-                    {match.status === 'completed' && !match.winner_id && (
-                      <span className="text-gray-600">Pareggio</span>
+                    {match.status === 'completed' && (
+                      <div className="flex items-center space-x-2">
+                        <img
+                          src={`/icons/profile${match.winner_id === match.player1_id ? '1' : '2'}.png`}
+                          alt="Winner"
+                          className="h-8 w-8 rounded-full object-cover"
+                        />
+                        <img
+                          src={`/icons/profile${match.winner_id === match.player1_id ? '2' : '1'}.png`}
+                          alt="Loser"
+                          className={`h-8 w-8 rounded-full object-cover opacity-50`}
+                        />
+                      </div>
                     )}
                   </div>
                 ))}
