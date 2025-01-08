@@ -260,7 +260,7 @@
           2px 2px 0 #105050
         `,
       }}>VINCITORE</p>
-              <img src="/icons/crown.png" alt="Winner Crown" className="h-40 w-48" />
+              <img src="https://github.com/simone10522/LBDBPP/blob/main/icons/crown.png?raw=true" alt="Winner Crown" className="h-40 w-48" />
               <p className="mt-2 text-4xl font-bold text-gray-900 text-center">{winner.username}</p>
             </div>
           )}
