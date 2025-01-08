@@ -54,7 +54,7 @@ import React, { useEffect, useState } from 'react';
             <div className="flex justify-between items-center h-16">
               <Link to="/" className="flex items-center space-x-2">
                 <img
-                  src="/icons/pokeball.png"
+                  src="https://github.com/simone10522/LBDBPP/blob/main/icons/pokeball.png?raw=true"
                   alt="Pokeball Icon"
                   className="h-12 w-12 animate-spin-slow"
                 />
