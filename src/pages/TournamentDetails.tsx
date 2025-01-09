@@ -230,8 +230,7 @@
               {(tournament.status === 'in_progress' || tournament.status === 'completed') && (
                 <MatchList
                   matches={matches}
-                  onSetWinner={isOwner && tournament.status === 'in_progress' ? handleSetWinner : undefined}
-                  readonly={tournament.status === 'completed' || !isOwner}
+                  onSetWinner={tournament.status === 'in_progress' ? handleSetWinner : undefined}
                 />
               )}
             </div>
@@ -251,7 +250,7 @@
           </div>
           {tournament.status === 'completed' && winner && (
             <div className="flex flex-col items-center justify-center mt-8">
-              <p className="text-center text-green-600 font-bold text-xl">VINCITORE</p>
+              <p className="text-center text-green-500 font-bold text-4xl tracking-widest custom-text-shadow">VINCITORE</p>
               <img src="/icons/crown.png" alt="Winner Crown" className="h-40 w-48" />
               <p className="mt-2 text-4xl font-bold text-gray-900 text-center">{winner.username}</p>
             </div>

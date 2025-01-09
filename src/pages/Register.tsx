@@ -87,17 +87,9 @@ import React, { useState } from 'react';
               >
                 <option value="">Select an image</option>
                 <option value="/icons/profile1.png">Profile 1</option>
-                <option value="https://github.com/simone10522/LBDBPP/blob/main/icons/profile2.png?raw=true">Profile 2</option>
-                <option value="https://github.com/simone10522/LBDBPP/blob/main/icons/profile3.png?raw=true">Profile 3</option>
-                <option value="https://github.com/simone10522/LBDBPP/blob/main/icons/profile4.png?raw=true">Profile 4</option>
-                <option value="/icons/profile5.png">Profile 5</option>
-                <option value="/icons/profile6.png">Profile 6</option>
-                <option value="/icons/profile7.png">Profile 7</option>
-                <option value="/icons/profile8.png">Profile 8</option>
-                <option value="/icons/profile9.png">Profile 9</option>
-                <option value="/icons/profile10.png">Profile 10</option>
-                <option value="/icons/profile11.png">Profile 11</option>
-                <option value="/icons/profile12.png">Profile 12</option>
+                <option value="/icons/profile2.png">Profile 2</option>
+                <option value="/icons/profile3.png">Profile 3</option>
+                <option value="/icons/profile4.png">Profile 4</option>
               </select>
               <input
                 type="text"

@@ -6,15 +6,16 @@ import React from 'react';
     
     export const EnergyIcon: React.FC<EnergyIconProps> = ({ energy }) => {
       const energyMap = {
-        fuoco: 'https://github.com/simone10522/LBDBPP/blob/main/icons/fuoco.png?raw=true',
-        acqua: 'https://github.com/simone10522/LBDBPP/blob/main/icons/acqua.png?raw=true',
-        elettro: 'https://github.com/simone10522/LBDBPP/blob/main/icons/elettro.png?raw=true',
-        normale: 'https://github.com/simone10522/LBDBPP/blob/main/icons/normale.png?raw=true',
-        erba: 'https://github.com/simone10522/LBDBPP/blob/main/icons/erba.png?raw=true.png',
-        oscurità: 'https://github.com/simone10522/LBDBPP/blob/main/icons/oscurit%C3%A0.png?raw=true',
-        lotta: 'https://github.com/simone10522/LBDBPP/blob/main/icons/lotta.png?raw=true',
-        acciaio: 'https://github.com/simone10522/LBDBPP/blob/main/icons/acciaio.png?raw=true',
-        psico: 'https://github.com/simone10522/LBDBPP/blob/main/icons/psico.png?raw=true',
+        fuoco: '/icons/fuoco.png',
+        terra: '/icons/terra.png',
+        acqua: '/icons/acqua.png',
+        elettro: '/icons/elettro.png',
+        normale: '/icons/normale.png',
+        erba: '/icons/erba.png',
+        oscurità: '/icons/oscurità.png',
+        lotta: '/icons/lotta.png',
+        acciaio: '/icons/acciaio.png',
+        psico: '/icons/psico.png',
       };
       return <img src={energyMap[energy]} alt={energy} className="h-8 w-8 inline" />;
     };

@@ -32,7 +32,7 @@ import React, { useEffect, useState } from 'react';
       return (
         <div>
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-5xl font-bold text-yellow-400" style={{ textShadow: '1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white' }}>Tornei</h1>
+            <h1 className="text-5xl font-bold text-yellow-300" style={{ textShadow: '3px 3px 0 black' }}>Tornei</h1>
             <Link
               to="/tournaments/create"
               className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
@@ -74,14 +74,14 @@ import React, { useEffect, useState } from 'react';
           </div>
 
           {tournaments.length === 0 && (
-             <div className="text-center py-12 max-w-4xl mx-auto p-4 bg-gray-50 bg-opacity-50 rounded-lg shadow-md">
+            <div className="text-center py-12 max-w-4xl mx-auto p-4 bg-gray-50 bg-opacity-50 rounded-lg shadow-md">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2048px-Pok%C3%A9_Ball_icon.svg.png"
                 alt="Pokeball Icon"
                 className="h-12 w-12 text-gray-400 mx-auto mb-4"
               />
               <h3 className="text-lg font-medium text-gray-900">Nessun Torneo Disponibile</h3>
-              <p className="text-gray-700">Inizia creando il tuo torneo!</p>
+              <p className="text-gray-500">Inizia creando un Torneo!</p>
             </div>
           )}
         </div>

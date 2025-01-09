@@ -54,12 +54,12 @@ import React, { useEffect, useState } from 'react';
             <div className="flex justify-between items-center h-16">
               <Link to="/" className="flex items-center space-x-2">
                 <img
-                  src="https://github.com/simone10522/LBDBPP/blob/main/icons/pokeball.png?raw=true"
+                  src="/icons/pokeball.png"
                   alt="Pokeball Icon"
                   className="h-12 w-12 animate-spin-slow"
                 />
                 <img
-                  src="https://github.com/simone10522/LBDBPP/blob/main/icons/LBDBPP.png?raw=true"
+                  src="/icons/LBDBPP.png"
                   alt="Pokemon Logo"
                   className="h-10"
                 />
@@ -72,7 +72,7 @@ import React, { useEffect, useState } from 'react';
                       <img
                         src={profileImage}
                         alt="Profile"
-                        className="h-8 w-8 rounded-full object-cover"
+                        className="h-11 w-11 rounded-full object-cover"
                       />
                     )}
                     <span className="text-white">Ciao! {username}</span>
