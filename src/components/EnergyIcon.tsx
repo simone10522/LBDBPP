@@ -10,12 +10,12 @@ import React from 'react';
         terra: '/icons/terra.png',
         acqua: 'https://github.com/simone10522/LBDBPP/blob/main/icons/acqua.png?raw=true',
         elettro: 'https://github.com/simone10522/LBDBPP/blob/main/icons/elettro.png?raw=true',
-        normale: '/icons/normale.png',
+        normale: 'https://github.com/simone10522/LBDBPP/blob/main/icons/normale.png?raw=true',
         erba: 'https://github.com/simone10522/LBDBPP/blob/main/icons/erba.png?raw=true',
-        oscurità: '/icons/oscurità.png',
+        oscurità: 'https://github.com/simone10522/LBDBPP/blob/main/icons/oscurit%C3%A0.png?raw=true',
         lotta: 'https://github.com/simone10522/LBDBPP/blob/main/icons/lotta.png?raw=true',
         acciaio: 'https://github.com/simone10522/LBDBPP/blob/main/icons/acciaio.png?raw=true',
-        psico: '/icons/psico.png',
+        psico: 'https://github.com/simone10522/LBDBPP/blob/main/icons/psico.png?raw=true',
       };
       return <img src={energyMap[energy]} alt={energy} className="h-8 w-8 inline" />;
     };
