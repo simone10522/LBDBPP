@@ -6,15 +6,15 @@ import React from 'react';
     
     export const EnergyIcon: React.FC<EnergyIconProps> = ({ energy }) => {
       const energyMap = {
-        fuoco: '/icons/fuoco.png',
+        fuoco: 'https://github.com/simone10522/LBDBPP/blob/main/icons/fuoco.png?raw=true',
         terra: '/icons/terra.png',
-        acqua: '/icons/acqua.png',
-        elettro: '/icons/elettro.png',
+        acqua: 'https://github.com/simone10522/LBDBPP/blob/main/icons/acqua.png?raw=true',
+        elettro: 'https://github.com/simone10522/LBDBPP/blob/main/icons/elettro.png?raw=true',
         normale: '/icons/normale.png',
-        erba: '/icons/erba.png',
+        erba: 'https://github.com/simone10522/LBDBPP/blob/main/icons/erba.png?raw=true',
         oscurità: '/icons/oscurità.png',
-        lotta: '/icons/lotta.png',
-        acciaio: '/icons/acciaio.png',
+        lotta: 'https://github.com/simone10522/LBDBPP/blob/main/icons/lotta.png?raw=true',
+        acciaio: 'https://github.com/simone10522/LBDBPP/blob/main/icons/acciaio.png?raw=true',
         psico: '/icons/psico.png',
       };
       return <img src={energyMap[energy]} alt={energy} className="h-8 w-8 inline" />;

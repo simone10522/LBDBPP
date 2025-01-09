@@ -40,7 +40,7 @@ import React, { useState } from 'react';
       };
 
       return (
-        <div className="max-w-md mx-auto p-4 bg-gray-200 bg-opacity-50 rounded-lg shadow-md"> {/* Added background */}
+        <div className="max-w-md mx-auto p-4 bg-gray-200 bg-opacity-50 rounded-lg shadow-md">
           <h1 className="text-2xl font-bold text-center mb-8">Register</h1>
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -98,6 +98,15 @@ import React, { useState } from 'react';
                 onChange={(e) => setProfileImage(e.target.value)}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               />
+              {profileImage && (
+                <div className="mt-2">
+                  <img
+                    src={profileImage}
+                    alt="Profile Preview"
+                    className="h-20 w-20 rounded-full object-cover"
+                  />
+                </div>
+              )}
             </div>
             <button
               type="submit"
