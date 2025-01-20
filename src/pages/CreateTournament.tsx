@@ -9,19 +9,24 @@ import React, { useState } from 'react';
       const [name, setName] = useState('');
       const [description, setDescription] = useState('');
       const [startDate, setStartDate] = useState('');
-      const [maxPlayers, setMaxPlayers] = useState('illimitato'); // Added maxPlayers state
+      const [maxPlayers, setMaxPlayers] = useState('illimitato');
+      const [maxRounds, setMaxRounds] = useState('illimitato');
       const [error, setError] = useState('');
     
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-          const maxPlayersValue = maxPlayers === 'illimitato' ? null : parseInt(maxPlayers, 10); // Handle "illimitato"
+          const maxPlayersValue = maxPlayers === 'illimitato' ? null : parseInt(maxPlayers, 10);
           if (maxPlayersValue !== null && isNaN(maxPlayersValue)) {
             throw new Error("Numero massimo di giocatori non valido.");
           }
+          const maxRoundsValue = maxRounds === 'illimitato' ? null : parseInt(maxRounds, 10);
+          if (maxRoundsValue !== null && isNaN(maxRoundsValue)) {
+            throw new Error("Numero massimo di turni non valido.");
+          }
           const { data: tournament, error: tournamentError } = await supabase
             .from('tournaments')
-            .insert([{ name, description, created_by: user?.id, start_date: startDate, max_players: maxPlayersValue }])
+            .insert([{ name, description, created_by: user?.id, start_date: startDate, max_players: maxPlayersValue, max_rounds: maxRoundsValue }])
             .select()
             .single();
           if (tournamentError) throw tournamentError;
@@ -32,7 +37,7 @@ import React, { useState } from 'react';
       };
     
       return (
-        <div className="max-w-md mx-auto p-4 bg-gray-200 bg-opacity-50 rounded-lg shadow-md"> {/* Added background */}
+        <div className="max-w-md mx-auto p-4 bg-gray-200 bg-opacity-50 rounded-lg shadow-md">
           <h1 className="text-3xl font-bold text-gray-900 mb-8">Create Tournament</h1>
     
           {error && (
@@ -69,7 +74,7 @@ import React, { useState } from 'react';
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                min={new Date(Date.now() + 86400000).toISOString().slice(0, 10)} 
+                min={new Date(Date.now() + 86400000).toISOString().slice(0, 10)}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 required
               />
@@ -84,6 +89,21 @@ import React, { useState } from 'react';
               >
                 <option value="illimitato">Unlimited</option>
                 {Array.from({ length: 50 }, (_, i) => i + 2).map((num) => (
+                  <option key={num} value={num.toString()}>
+                    {num}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Max Rounds</label>
+              <select
+                value={maxRounds}
+                onChange={(e) => setMaxRounds(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              >
+                <option value="illimitato">Unlimited</option>
+                {Array.from({ length: 50 }, (_, i) => i + 1).map((num) => (
                   <option key={num} value={num.toString()}>
                     {num}
                   </option>

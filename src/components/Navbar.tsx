@@ -89,13 +89,13 @@ import React, { useEffect, useState } from 'react';
                       to="/login"
                       className="px-4 py-2 text-white hover:text-gray-200 transition"
                     >
-                      Login
+                      Accedi
                     </Link>
                     <Link
                       to="/register"
                       className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
                     >
-                      Register
+                      Registrati
                     </Link>
                   </>
                 )}
