@@ -75,7 +75,7 @@ import React, { useEffect, useState } from 'react';
                         className="h-11 w-11 rounded-full object-cover"
                       />
                     )}
-                    <span className="text-white">Ciao! {username}</span>
+                    <Link to="/profile" className="text-white hover:underline">Ciao! {username}</Link>
                     <button
                       onClick={handleLogout}
                       className="px-4 py-2 text-white hover:text-gray-200 transition"

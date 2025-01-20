@@ -1,10 +1,10 @@
-// src/pages/TournamentDetails.tsx
-    import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
     import { useParams, Link, useNavigate } from 'react-router-dom';
     import { supabase } from '../lib/supabase';
     import { useAuth } from '../hooks/useAuth';
     import MatchList from '../components/MatchList';
     import ParticipantList from '../components/ParticipantList';
+    import { Trash2, Edit } from 'lucide-react';
 
     interface Tournament {
       id: string;
@@ -175,6 +175,27 @@
         return data.length === 0;
       };
 
+      const handleDeleteTournament = async () => {
+        if (!user || !tournament || tournament.created_by !== user.id) {
+          setError('Non sei autorizzato a cancellare questo torneo.');
+          return;
+        }
+        try {
+          const { error } = await supabase
+            .from('tournaments')
+            .delete()
+            .eq('id', id);
+          if (error) throw error;
+          navigate('/');
+        } catch (error: any) {
+          setError(error.message);
+        }
+      };
+
+      const handleEditTournament = () => {
+        navigate(`/tournaments/edit/${id}`);
+      };
+
       if (loading) {
         return <div>Loading...</div>;
       }
@@ -222,6 +243,24 @@
                 </span>
               </div>
             </div>
+            {isOwner && (
+              <div className="flex space-x-2">
+                <button
+                  onClick={handleEditTournament}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-md flex items-center space-x-2"
+                >
+                  <Edit className="h-4 w-4" />
+                  <span>Edit Tournament</span>
+                </button>
+                <button
+                  onClick={handleDeleteTournament}
+                  className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow-md flex items-center space-x-2"
+                >
+                  <Trash2 className="h-4 w-4" />
+                  <span>Delete Tournament</span>
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

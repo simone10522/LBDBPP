@@ -8,6 +8,8 @@ import React from 'react';
     import TournamentDetails from './pages/TournamentDetails';
     import ManageParticipants from './pages/ManageParticipants';
     import ManageDecks from './pages/ManageDecks';
+    import EditTournament from './pages/EditTournament';
+    import Profile from './pages/Profile';
 
     function App() {
       return (
@@ -30,6 +32,8 @@ import React from 'react';
                 <Route path="/tournaments/:id" element={<TournamentDetails />} />
                 <Route path="/tournaments/:id/participants" element={<ManageParticipants />} />
                 <Route path="/managedecks" element={<ManageDecks />} />
+                <Route path="/tournaments/edit/:id" element={<EditTournament />} />
+                <Route path="/profile" element={<Profile />} />
               </Routes>
             </main>
           </div>
